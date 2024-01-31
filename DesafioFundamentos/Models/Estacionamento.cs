@@ -19,10 +19,13 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine().Trim();
 
-            if(string.IsNullOrEmpty(placa))
+            
+            while (string.IsNullOrEmpty(placa))
             {
                 Console.WriteLine("Placa inválida!");
-                return;
+                Console.WriteLine("Digite uma placa válida:");
+                placa = Console.ReadLine().Trim();
+
             }
            
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
